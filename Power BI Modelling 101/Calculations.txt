@@ -1,0 +1,23 @@
+Dates
+
+Numeric IDs
+
+Calculated Columns
+Day of Week Name = FORMAT( [Date], "dddd" )
+
+Ordering Strings
+Day Of Week Number = WEEKDAY( [Date] )
+
+Relationships
+
+Cross-Table Visuals
+
+Multi-Measure Visuals
+
+Cross-Table Calculations
+Profit Measure (Wrong) = SUM( [Sales] ) - SUM( [Profit] )
+Profit = [Sales] - RELATED( 'Product'[Prod Cost] )
+
+Profit v2 = [Sales] - LOOKUPVALUE( 'Product'[Prod Cost], 'Product'[Prod Number], 'Sales'[Product Number] )
+Profit v3 = [Sales] - CALCULATE( MAX( 'Product'[Prod Cost] ), 'Product'[Prod Number] = EARLIER( 'Sales'[Product Number] ) )
+
